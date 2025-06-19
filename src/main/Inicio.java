@@ -1,10 +1,11 @@
 package src.main;
-import src.servicio.JuegoDeDados;
-import src.servicio.JuegoDadosConsola;
+
+import src.servicio.ConsolaJuegoVersus;
 
 public class Inicio {
     public static void main(String[] args) {
-    JuegoDadosConsola consola = new JuegoDadosConsola();
-    consola.iniciarJuego();
+        ConsolaJuegoVersus consola = new ConsolaJuegoVersus();
+
+        consola.iniciar();
     }
 }
