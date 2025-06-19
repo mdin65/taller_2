@@ -1,7 +1,5 @@
-import java.util.Scanner;
-import src.servicio.JuegoDeDados;
 package src.servicio;
-
+import java.util.Scanner;
 
 public class JuegoDadosConsola {
     private JuegoDeDados juego;
@@ -35,13 +33,30 @@ public class JuegoDadosConsola {
                             System.out.println("Opción inválida. Intente nuevamente.");
             }
             System.out.println();
-
-
         }
+        scanner.close();
+    }
+    private void mostrarMenu() {
+        System.out.println("======= Menú Principal: ======");
+        System.out.println("1. Jugar");
+        System.out.println("2. Salir");
+        System.out.println("Ingrese su opción: ");
     }
 
+    private int leerOpcion() {
+        while(!scanner.hasNextInt()) {
+            System.out.println("Opción invalida. Intente nuevamente.");
+            scanner.next();
+            System.out.println("Ingrese su opción: ");
+        }
+        int opcion = scanner.nextInt();
+        scanner.nextLine();
+        return opcion;
 
-
-
-
+    }
+    private boolean confirmarSalida() {
+        System.out.println("Está segurx que desea salir?(S/N)");
+        String respuesta = scanner.nextLine().trim().toUpperCase();
+        return respuesta.equals("S");
+    }
 }
